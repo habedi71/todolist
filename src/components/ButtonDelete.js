@@ -7,8 +7,7 @@ const ButtonDelete = ({ id, onClick, todoDone }) => {
 	if (!todoDone) {
 		return (
 			<button
-				onClick={onClick}
-				name={`-${id}`}
+				onClick={() => onClick(-id)} // -id is condition for delete from list
 				title="Delete"
 				className={`${btnStyle.bg} px-3 pb-1 m-0 border-0 rounded`}
 			>

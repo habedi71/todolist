@@ -11,8 +11,7 @@ const Button = ({ id, todoDone, onClick }) => {
 	return (
 		<>
 			<button
-				onClick={onClick}
-				name={id}
+				onClick={() => onClick(id)}
 				title={btnStyle.title}
 				className={`${btnStyle.bg} px-3 mx-2 border-0 rounded`}
 			>
