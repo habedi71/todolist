@@ -3,14 +3,14 @@ import React from "react";
 import Item from "./Item";
 import Button from "./Button";
 
-const List = ({ currentTodos, on_click, todoDone, title }) => {
+const List = ({ currentTodos, onClickProps, todoDone }) => {
 	// the map function will read todos list passed in from App state
 	// and create a List component
 	const todoList = currentTodos.map((todo) => {
 		if (todo.done === !todoDone) {
 			return (
 				<Item key={todo.id} todo={todo}>
-					<Button id={todo.id} onClick={on_click} todoDone={todoDone} />
+					<Button onClick={onClickProps} id={todo.id} todoDone={todoDone} />
 				</Item>
 			);
 		}

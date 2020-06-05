@@ -17,7 +17,7 @@ const Button = ({ id, todoDone, onClick }) => {
 			>
 				<FontAwesomeIcon icon={btnStyle.icon} />
 			</button>
-			<ButtonDelete id={id} todoDone={todoDone} onClick={onClick} />
+			<ButtonDelete todoDone={todoDone} id={id} onClick={onClick} />
 		</>
 	);
 };
