@@ -9,31 +9,32 @@ class SubmitTodoForm extends React.Component {
 		this.setState({ input: e.target.value });
 	};
 
-	handleSubmit = (e) => {
-		e.preventDefault();
-		e.target["todoInput"].value = "";
-		e.target["todoInput"].focus();
+	handleClick = (e) => {
+		const inputElement = document.getElementById("todoInput");
+		inputElement.value = "";
+		inputElement.focus();
 		if (this.state.input.length === 0) {
 			return;
 		}
-		this.props.onSubmitProps(this.state.input);
+		const newInput = this.state.input;
+		this.setState({ input: "" });
+		this.props.onSubmitProps(newInput);
 	};
 
 	render() {
 		return (
-			<form
-				className="shadow p-3 mb-5 bg-white rounded d-flex flex-row m-5"
-				onSubmit={this.handleSubmit}
-			>
+			<div className="shadow px-2 bg-white rounded d-flex flex-row my-5">
 				<input
 					type="text"
-					name="todoInput"
+					id="todoInput"
 					onChange={this.handleChange}
 					className="col form-control mb-2 mr-sm-2"
 					placeholder="Enter Todo"
-				></input>
-				<button className="btn btn-primary mb-2">Add Todo</button>
-			</form>
+				/>
+				<button onClick={this.handleClick} className="btn btn-primary mb-2">
+					Add Todo
+				</button>
+			</div>
 		);
 	}
 }

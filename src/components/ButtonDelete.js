@@ -1,21 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
-const ButtonDelete = ({ id, onClick, todoDone }) => {
-	const btnStyle = { bg: "bg-info text-white", icon: faTrashAlt };
-	if (!todoDone) {
-		return (
-			<button
-				onClick={() => onClick(-id)} // -id is condition for delete from list
-				title="Delete"
-				className={`${btnStyle.bg} px-3 pb-1 m-0 border-0 rounded`}
-			>
-				<FontAwesomeIcon className="small" icon={btnStyle.icon} />
-			</button>
-		);
-	}
-	return "";
+const ButtonDelete = ({ id, onClickDelete }) => {
+	return (
+		<button onClick={() => onClickDelete(id)} title="Delete" className="btn btn-sm btn-info text-white">
+			<FontAwesomeIcon icon="window-close" />
+		</button>
+	);
 };
 
 export default ButtonDelete;

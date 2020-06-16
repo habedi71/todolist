@@ -1,23 +1,19 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
-
-import ButtonDelete from "./ButtonDelete";
 
 const Button = ({ id, todoDone, onClick }) => {
 	const btnStyle = todoDone
-		? { bg: "bg-warning", icon: faAngleDown, title: "Remove" }
-		: { bg: "bg-info text-white", icon: faAngleUp, title: "Recover" };
+		? { bg: "bg-warning", icon: "trash", title: "Remove" }
+		: { bg: "bg-info text-white", icon: "trash-restore", title: "Recover" };
 	return (
 		<>
 			<button
 				onClick={() => onClick(id)}
 				title={btnStyle.title}
-				className={`${btnStyle.bg} px-3 mx-2 border-0 rounded`}
+				className={`btn btn-sm ${btnStyle.bg} mx-1`}
 			>
-				<FontAwesomeIcon icon={btnStyle.icon} />
+				<FontAwesomeIcon icon={btnStyle.icon} size="1x" />
 			</button>
-			<ButtonDelete todoDone={todoDone} id={id} onClick={onClick} />
 		</>
 	);
 };

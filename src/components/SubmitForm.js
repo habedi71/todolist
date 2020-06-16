@@ -2,7 +2,7 @@ import React from "react";
 
 const SubmitForm = ({ on_change, on_submit }) => {
 	return (
-		<form className="shadow p-3 mb-5 bg-white rounded d-flex flex-row m-5" onSubmit={on_submit}>
+		<form className="shadow p-3 mb-5 bg-white rounded d-flex flex-row m-5 w-100" onSubmit={on_submit}>
 			<input
 				type="text"
 				name="todoInput"
